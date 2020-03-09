@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="90" viewBox="0 0 1200 90">
+    <defs>
+        <linearGradient id="b" x1="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFF8F4" stop-opacity=".12"/>
+            <stop offset="51.335%" stop-color="#FFF8F4"/>
+            <stop offset="100%" stop-color="#FFF8F4" stop-opacity=".12"/>
+        </linearGradient>
+        <rect id="a" width="1200" height="90" rx="12"/>
+        <filter id="c" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <linearGradient id="e" x1="100%" x2="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFE8E2" stop-opacity="0"/>
+            <stop offset="61.618%" stop-color="#FFEEE9"/>
+            <stop offset="100%" stop-color="#FFEEE8" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="f" width="250%" height="250%" x="-75%" y="-75%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+        </filter>
+        <filter id="g" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <linearGradient id="h" x1="100%" x2="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFE8E2" stop-opacity="0"/>
+            <stop offset="61.618%" stop-color="#FFEEE9"/>
+            <stop offset="100%" stop-color="#FFEEE8" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="i" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <linearGradient id="j" x1="100%" x2="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFE8E2" stop-opacity=".156"/>
+            <stop offset="39.585%" stop-color="#FFEEE9" stop-opacity=".64"/>
+            <stop offset="100%" stop-color="#FFEEE8" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="k" width="118.8%" height="150%" x="-9.4%" y="-25%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+        </filter>
+        <linearGradient id="l" x1="100%" x2="1.561%" y1="30.667%" y2="30.667%">
+            <stop offset="0%" stop-color="#FFEEE8" stop-opacity="0"/>
+            <stop offset="49.448%" stop-color="#FFEEE8"/>
+            <stop offset="100%" stop-color="#FFF6F3" stop-opacity=".118"/>
+        </linearGradient>
+        <linearGradient id="n" x1="50%" x2="50%" y1=".1%" y2="100%">
+            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#FFF1EB"/>
+        </linearGradient>
+        <ellipse id="m" cx="225" cy="32" rx="225" ry="32"/>
+        <linearGradient id="o" x1="3.831%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFE1D6"/>
+            <stop offset="100%" stop-color="#FFE1D9" stop-opacity=".168"/>
+        </linearGradient>
+        <linearGradient id="p" x1="3.831%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFE1D6"/>
+            <stop offset="100%" stop-color="#FFE1D9" stop-opacity=".168"/>
+        </linearGradient>
+        <linearGradient id="q" x1="3.831%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFE1D9" stop-opacity=".168"/>
+            <stop offset="100%" stop-color="#FFE1D6"/>
+        </linearGradient>
+        <linearGradient id="r" x1="100%" x2="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFE8E2" stop-opacity=".156"/>
+            <stop offset="39.585%" stop-color="#FFEEE9" stop-opacity=".64"/>
+            <stop offset="100%" stop-color="#FFEEE8" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="s" x1="100%" x2="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#FFF"/>
+        </linearGradient>
+        <filter id="t" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <filter id="u" width="100%" height="100%" x="0%" y="0%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic"/>
+        </filter>
+        <linearGradient id="x" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFD5C0"/>
+            <stop offset="100%" stop-color="#FFF5F1" stop-opacity=".06"/>
+        </linearGradient>
+        <circle id="w" cx="600" cy="-44" r="63"/>
+        <filter id="v" width="138.1%" height="138.1%" x="-19%" y="-19%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="8"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="d" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <use fill="url(#b)" xlink:href="#a"/>
+        <circle cx="217" cy="27" r="2" fill="#FFF3ED" filter="url(#c)" mask="url(#d)"/>
+        <circle cx="1051" cy="69" r="2" fill="url(#e)" filter="url(#f)" mask="url(#d)"/>
+        <circle cx="973" cy="68" r="1" fill="#FFF3ED" filter="url(#g)" mask="url(#d)"/>
+        <circle cx="168" cy="55" r="2" fill="#FFEAE4" mask="url(#d)" opacity=".24"/>
+        <circle cx="245" cy="63" r="1" fill="#FFEAE4" mask="url(#d)"/>
+        <path fill="url(#h)" d="M1113.444 43a2 2 0 0 0-1.85-1.995l-.15-.005H1110a2 2 0 1 1 0-4h26a2 2 0 1 1 0 4h-3.444a2 2 0 0 0-.15 3.995l.15.005H1134a2 2 0 1 1 0 4h-26a2 2 0 1 1 0-4h3.444a2 2 0 0 0 2-2z" filter="url(#i)" mask="url(#d)"/>
+        <path fill="url(#j)" d="M103.71 59a2 2 0 0 0-1.85-1.995l-.15-.005H99a2 2 0 1 1 0-4h27a2 2 0 0 1 0 4h-2.71a2 2 0 0 0-.15 3.995l.15.005H125a2 2 0 0 1 0 4H98a2 2 0 1 1 0-4h3.71a2 2 0 0 0 2-2z" filter="url(#k)" mask="url(#d)"/>
+        <g mask="url(#d)">
+            <g transform="translate(375 71)">
+                <use fill="url(#l)" xlink:href="#m"/>
+                <use fill="url(#n)" xlink:href="#m"/>
+                <ellipse cx="296" cy="13" fill="url(#o)" opacity=".701" rx="5" ry="2" transform="rotate(6 296 13)"/>
+                <ellipse cx="223" cy="11" fill="url(#p)" opacity=".701" rx="8" ry="4"/>
+                <ellipse cx="139" cy="13" fill="url(#q)" opacity=".701" rx="5" ry="2" transform="rotate(-4 139 13)"/>
+            </g>
+        </g>
+        <circle cx="906" cy="45" r="10" fill="url(#r)" mask="url(#d)" transform="matrix(-1 0 0 1 1812 0)"/>
+        <path fill="url(#s)" d="M684 52l212 15V23L684 38z" filter="url(#t)" mask="url(#d)" transform="matrix(-1 0 0 1 1580 0)"/>
+        <circle cx="294" cy="45" r="10" fill="url(#r)" mask="url(#d)"/>
+        <path fill="url(#s)" d="M304 50l212 17V23L304 40z" filter="url(#u)" mask="url(#d)"/>
+        <g mask="url(#d)">
+            <use fill="#000" filter="url(#v)" xlink:href="#w"/>
+            <use fill="url(#x)" xlink:href="#w"/>
+        </g>
+    </g>
+</svg>

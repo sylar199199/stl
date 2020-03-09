@@ -1,0 +1,70 @@
+@import "~@/style/variables.less";
+.feedback{
+    padding-bottom: 151px;
+    .feedback-layer{
+      background-color: @white;
+      margin-top:17px;
+      border-radius: 4px;
+      .feedback-header {
+        height: 60px;
+        border-bottom:1px solid @gray-bg-color;
+        line-height: 60px;
+        padding:0px 32px 0;
+      }
+      ::v-deep.feedback-content{
+        padding:32px 32px 0px 32px;
+        border-bottom: 1px solid @gray-bg-color;
+        .question{
+          margin:17px 0 32px 0;
+          .el-radio{
+            margin-right: 64px;
+            .el-radio__inner {
+              width: 20px;
+              height: 20px;
+              &:after {
+                height: 8px;
+                width: 8px;
+              }
+            }
+          }
+        }
+        .el-textarea__inner{
+          background-color:@gray-bg-color;
+          border-radius: 8px;
+          padding: 8px 16px;
+        }
+        .add-picture{
+          margin:32px 0px 16px 0px;
+        }
+        .upload-pictrue{
+          margin-bottom: 172px;
+        }
+        .el-upload--picture-card{
+          border:none;
+          width: 40px;
+          height: 40px;
+          line-height: 40px; 
+        }
+        .el-upload-list__item{
+          width: 40px;
+          height: 40px; 
+        }
+        .el-upload-list__item-thumbnail{
+          width: 40px;
+          height: 40px;
+        }
+        .el-upload-list__item-status-label{
+          display: none;
+        }
+      }
+      .feedback-footer-layer{
+        height: 90px;
+        line-height: 90px;
+        .feedback-footer{
+          width: 168px;
+          height: 40px;
+          border-radius: 20px;
+        }
+      }
+    }
+  }

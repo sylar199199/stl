@@ -1,0 +1,169 @@
+@import "~@/style/variables.less";
+
+.my-order-layer {
+  .my-order-content {
+    .title-layer {
+      padding: 0 32px 0 12px;
+
+      ::v-deep .order-tabs {
+        .el-badge__content {
+          top: 18px;
+          right: 3px;
+        }
+      }
+
+      .order-select {
+        width: 120px;
+        margin: 22px 0 0;
+      }
+    }
+
+    .content {
+      padding: 32px;
+
+      .empty-content {
+        color: @global-muted2;
+        margin: 30px 0;
+      }
+    }
+
+    .order-table {
+      width: 100%;
+      margin: 0 0 20px;
+      border-collapse: collapse;
+      border: 1px solid @gray-bg-color;
+      border-radius: 8px;
+
+      th, td {
+        vertical-align: middle;
+      }
+
+      thead {
+        th {
+          color: @global-default4;
+          height: 64px;
+          background-color: @gray-bg-color;
+          padding: 0 20px;
+
+          span {
+            margin: 0 40px 0 0;
+          }
+        }
+      }
+
+      tbody {
+        td {
+          border-right: 1px solid @gray-bg-color;
+
+          &:last-child {
+            border-right: none;
+          }
+
+          &.info {
+            width: 504px;
+            padding: 14px;
+
+            &.huidou-info {
+              .origin-price {
+                padding-top: 5px;
+              }
+            }
+
+            .origin-price {
+              padding: 38px 0 0;
+
+              span {
+                position: relative;
+                z-index: 1;
+              }
+            }
+
+            ::v-deep .huidou-icon {
+              .num {
+                font-size: 16px;
+              }
+            }
+          }
+
+          &.price {
+            width: 196px;
+            padding: 30px 0;
+
+            p {
+              margin: 0 0 7px;
+
+              span, img {
+                vertical-align: middle;
+              }
+
+              img {
+                width: 20px;
+              }
+            }
+
+          }
+
+          &.opt {
+            .pay-btn {
+              width: 132px;
+              margin: 0 0 10px;
+            }
+
+            p {
+              margin: 0 0 7px;
+            }
+          }
+
+          .huidou-icon {
+            margin: 0 5px 0 0;
+            z-index: 1;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+
+  .dialog-pay-layer {
+    h2 {
+      padding: 30px 0 30px 32px;
+    }
+
+    .order-detail-list {
+      height: 390px;
+      overflow-y: auto;
+      color: @global-muted;
+      font-size: @font-size-lg;
+      margin: 0 5px 0 32px;
+
+      li {
+        line-height: 50px;
+
+        span {
+          display: inline-block;
+
+          &:last-child {
+            float: right;
+            padding-right: 27px;
+          }
+        }
+      }
+    }
+
+    p {
+      width: 375px;
+      margin: 0 auto;
+      padding: 37px 0 25px;
+    }
+  }
+
+  .dialog-paid-layer {
+    h3 {
+      margin: 0 0 20px;
+    }
+
+    p {
+      margin: 0 0 15px;
+    }
+  }
+}

@@ -1,0 +1,122 @@
+@import "~@/style/variables.less";
+
+.pay-order-layer {
+  background-color: @gray-bg-color;
+
+  .content {
+    padding: 50px 0;
+  }
+
+  .pay-order {
+    h2.title {
+      font-size: 24px;
+      margin: 0 0 25px;
+    }
+
+    .user-info-layer {
+      background-color: #fff;
+      padding: 32px;
+      margin: 0 0 16px;
+
+      .my-info {
+        strong {
+          margin: 0 0 0 10px;
+        }
+      }
+
+      .recharge-btn {
+        width: 144px;
+      }
+    }
+
+    .pay-order-list {
+      padding: 32px;
+      background-color: #fff;
+      margin: 0 0 16px;
+
+      h2 {
+        margin: 0 0 25px;
+      }
+
+      .pay-order-table {
+        width: 100%;
+        border-radius: 8px;
+        border: solid 1px #f6f7f9;
+        border-collapse: collapse;
+
+        thead {
+          th {
+            background-color: #f6f7f9;
+            height: 56px;
+            color: #5f666f;
+
+            &.info {
+              width: 496px;
+            }
+
+            &.price {
+              width: 280px;
+            }
+          }
+        }
+
+        tbody {
+          td {
+            padding: 24px;
+            height: 136px;
+
+            &:first-child {
+              width: 496px;
+            }
+
+            &:last-child {
+              width: 360px;
+            }
+
+            .discount-tag {
+              border-radius: 12px;
+            }
+
+            .huidou-icon {
+              width: 20px;
+              margin: 0 4px 0 0;
+            }
+          }
+        }
+      }
+    }
+
+    .pay-mode-layer {
+      padding: 32px;
+      background-color: #fff;
+
+      h2 {
+        margin: 0 0 20px;
+      }
+
+      .need-pay {
+        margin: 50px 0 20px;
+
+        strong {
+          font-size: 30px;
+        }
+      }
+
+      .opt-btn-layer {
+        margin: 0 0 20px;
+
+        .opt-btn {
+          font-size: 16px;
+          padding: 13px 40px;
+          margin: 0 0 0 25px;
+        }
+        .pay-pal-btn{
+          display: inline-block;
+          margin:0 0 0 25px;
+          width:162px;
+          height: 44px;
+        }
+      }
+    }
+  }
+}

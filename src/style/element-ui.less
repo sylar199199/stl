@@ -1,0 +1,156 @@
+@import "~@/style/variables.less";
+//覆盖element-ui样式
+.el-input {
+  .el-input__prefix, .el-input__suffix {
+    line-height: 1;
+  }
+}
+
+[class*=" el-icon-"], [class^=el-icon-] {
+  vertical-align: middle;
+}
+
+/*btn*/
+.el-button--disabled {
+  border-color: @global-muted3 !important;
+  background-color: @global-muted3 !important;
+  color: #fff;
+}
+
+//标签
+.el-tag--default {
+  background-color: #eff0f2;
+  border-color: #eff0f2;
+  color: #878f9a;
+  border-radius: 12px;
+  padding: 0 12px;
+}
+
+//默认提示tips
+.popover-tips-default {
+  min-width: 10px;
+  width: auto;
+  background-color: rgba(0, 0, 0, .88);
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 3px;
+  text-align: center;
+}
+
+//默认slide
+.el-carousel {
+  .el-carousel__indicator--horizontal {
+    padding: 0 0 15px;
+    width: 25px;
+
+    .el-carousel__button {
+      width: 8px;
+      height: 6px;
+      border-radius: 3px;
+      margin: 0 auto;
+    }
+
+    &.is-active {
+      .el-carousel__button {
+        width: 12px;
+      }
+    }
+  }
+}
+
+//默认dialog
+.default-dialog {
+  border-radius: 16px;
+
+  .el-dialog__header {
+    text-align: center;
+    font-size: 20px;
+    color: #232a34;
+    font-weight: bold;
+    padding: 0;
+  }
+
+  .close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    color: @global-default;
+    opacity: .34;
+
+    &:hover {
+      color: @global-default3;
+    }
+  }
+
+  .el-dialog__body {
+    padding: 0;
+  }
+}
+
+//表单
+.el-form {
+  .el-form-item {
+    margin: 0 0 15px;
+
+    &.is-error {
+      .el-input__inner, .el-textarea__inner {
+        background-color: #fdf4f4;
+      }
+
+      .el-form-item__error {
+        padding: 5px 0;
+      }
+    }
+  }
+}
+
+.el-select {
+  .el-input {
+    .el-input__suffix {
+      top: 0;
+    }
+
+    .el-select__caret {
+      font-size: @font-size-sm;
+
+      &:before {
+        content: "\e78f";
+      }
+    }
+
+    &.is-focus {
+      .el-select__caret {
+        &:before {
+          color: @global-primary;
+        }
+      }
+    }
+  }
+}
+
+.el-select-dropdown {
+  .el-select-dropdown__list {
+    padding: 4px;
+
+    .el-select-dropdown__item {
+      &:hover, &.hover {
+        background: linear-gradient(to right, #f6f7f9, #f6f7f9 51%, rgba(246, 247, 249, 0.12));
+      }
+    }
+  }
+}
+
+.el-message {
+  background-color:#1a1b1c;
+  min-width: 20px;
+  opacity: 0.88;
+  border-color:#1a1b1c;
+  top:50%!important;
+  .el-message__content {
+    color:#fff;
+  }
+}
+
+

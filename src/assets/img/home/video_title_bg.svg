@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="90" viewBox="0 0 1200 90">
+    <defs>
+        <linearGradient id="b" x1="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#F4F9FF" stop-opacity=".12"/>
+            <stop offset="51.335%" stop-color="#F4F9FF"/>
+            <stop offset="100%" stop-color="#F4F9FF" stop-opacity=".12"/>
+        </linearGradient>
+        <rect id="a" width="1200" height="90" rx="12"/>
+        <linearGradient id="c" x1="0%" x2="99.039%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#DCECFF" stop-opacity=".48"/>
+            <stop offset="48.694%" stop-color="#D9EAFF" stop-opacity=".554"/>
+            <stop offset="100%" stop-color="#D6E9FF" stop-opacity=".06"/>
+        </linearGradient>
+        <linearGradient id="e" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#DEEEFF"/>
+            <stop offset="100%" stop-color="#E4F0FF" stop-opacity=".236"/>
+        </linearGradient>
+        <linearGradient id="f" x1="100%" x2="1.561%" y1="30.667%" y2="30.667%">
+            <stop offset="0%" stop-color="#DCECFF" stop-opacity="0"/>
+            <stop offset="49.448%" stop-color="#DDECFF" stop-opacity=".236"/>
+            <stop offset="100%" stop-color="#DCEBFF" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="g" x1="100%" x2="1.561%" y1="30.667%" y2="30.667%">
+            <stop offset="0%" stop-color="#DCECFF" stop-opacity="0"/>
+            <stop offset="49.448%" stop-color="#DDECFF" stop-opacity=".239"/>
+            <stop offset="100%" stop-color="#DCEBFF" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="h" x1="0%" x2="99.039%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#D6E9FF" stop-opacity=".06"/>
+            <stop offset="51.306%" stop-color="#D9EAFF" stop-opacity=".477"/>
+            <stop offset="100%" stop-color="#DCECFF" stop-opacity=".48"/>
+        </linearGradient>
+        <linearGradient id="i" x1="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#FFF"/>
+        </linearGradient>
+        <linearGradient id="j" x1="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#D6E9FF" stop-opacity=".06"/>
+            <stop offset="100%" stop-color="#EDF5FF"/>
+        </linearGradient>
+        <linearGradient id="k" x1="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#D6E9FF" stop-opacity=".06"/>
+            <stop offset="51.306%" stop-color="#D9EAFF" stop-opacity=".554"/>
+            <stop offset="100%" stop-color="#DCECFF"/>
+        </linearGradient>
+        <linearGradient id="l" x1="56.378%" x2="43.622%" y1="73.34%" y2="60.521%">
+            <stop offset="0%" stop-color="#F1F7FF"/>
+            <stop offset="100%" stop-color="#DEECFF"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="d" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <use fill="url(#b)" xlink:href="#a"/>
+        <path fill="url(#c)" d="M1040.444 30a2 2 0 0 0-1.85-1.995l-.15-.005H1037a2 2 0 1 1 0-4h26a2 2 0 1 1 0 4h-3.444a2 2 0 0 0-.15 3.995l.15.005H1061a2 2 0 1 1 0 4h-26a2 2 0 1 1 0-4h3.444a2 2 0 0 0 2-2z" mask="url(#d)" opacity=".36"/>
+        <circle cx="690" cy="79" r="2" fill="url(#e)" mask="url(#d)"/>
+        <circle cx="519" cy="79" r="2" fill="url(#e)" mask="url(#d)"/>
+        <circle cx="225.5" cy="60.5" r="1.5" fill="url(#e)" mask="url(#d)"/>
+        <circle cx="274" cy="72" r="1" fill="url(#e)" mask="url(#d)"/>
+        <circle cx="601.5" cy="82.5" r="1.5" fill="url(#e)" mask="url(#d)"/>
+        <ellipse cx="1319" cy="90" fill="url(#f)" mask="url(#d)" opacity=".792" rx="463" ry="32"/>
+        <ellipse cy="105" fill="url(#g)" mask="url(#d)" opacity=".718" rx="463" ry="32"/>
+        <g transform="rotate(-15 203.532 -520.894)">
+            <rect width="20" height="20" fill="url(#h)" opacity=".9" rx="10"/>
+            <path fill="url(#i)" d="M8 7.869v4.262a1 1 0 0 0 1.555.833l3.197-2.132a1 1 0 0 0 0-1.664L9.555 7.036A1 1 0 0 0 8 7.87z"/>
+        </g>
+        <g opacity=".72">
+            <path fill="url(#j)" d="M5 0h169l-5 4H0z" transform="translate(294 39)"/>
+            <path fill="url(#k)" d="M0 4h169v10H0z" transform="translate(294 39)"/>
+            <path fill="url(#l)" d="M169 4l5-4v10l-5 4z" transform="translate(294 39)"/>
+            <g>
+                <path fill="url(#j)" d="M5 0h169l-5 4H0z" transform="matrix(-1 0 0 1 906 38)"/>
+                <path fill="url(#k)" d="M0 4h169v10H0z" transform="matrix(-1 0 0 1 906 38)"/>
+                <path fill="url(#l)" d="M169 4l5-4v10l-5 4z" transform="matrix(-1 0 0 1 906 38)"/>
+            </g>
+        </g>
+    </g>
+</svg>

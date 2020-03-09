@@ -1,0 +1,116 @@
+@import "~@/style/variables.less";
+
+.buy-beans-layer {
+  .buy-beans {
+    padding: 29px 32px;
+
+    .order-select {
+      width: 118px;
+      height: 32px;
+      margin-bottom: 16px;
+    }
+
+    .business-table {
+      border-radius: 8px;
+      border: solid 1px @gray-bg-color;
+      overflow: hidden;
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+          tr {
+            background-color: @gray-bg-color;
+            width: 216px;
+            height: 64px;
+            color: #5f666f;
+          }
+
+        }
+
+        tbody {
+          td {
+            width: 216px;
+            height: 64px;
+            border-right: solid 1px @gray-bg-color;
+            border-bottom: solid 1px @gray-bg-color;
+          }
+
+          td:nth-child(4) {
+            border-right: 1px transparent solid;
+          }
+        }
+      }
+    }
+
+    .buy-items {
+      position: relative;
+      width: 272px;
+      height: 120px;
+      border: 2px solid @gray-bg-color;
+      border-radius: 8px;
+      margin-top: 22px;
+
+      .discount-items {
+        width: 44px;
+        height: 24px;
+        background-color: #f8257c;
+        color: @white;
+        border-top-left-radius: 8px;
+      }
+
+      .content {
+        margin-top: 41px;
+        margin-bottom: 17px;
+
+        .huidou {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      .footer {
+        margin: 0px 16px;
+      }
+
+      .checked-style {
+        position: absolute;
+        top: -1px;
+        right: -1px;
+      }
+
+      .dollor {
+        margin: 0px 4px 0px 8px;
+      }
+
+      .greater-value {
+        width: 70px;
+        border-radius: 13.5px;
+        background-color: rgba(254, 116, 61, 0.06);
+      }
+
+      .edit-mask {
+        top: -45px;
+        position: relative;
+
+        ::v-deep.el-checkbox__inner {
+          border-top-right-radius: 8px;
+        }
+      }
+    }
+
+    .buy-beans-footer {
+      margin-top: 32px;
+      margin-bottom: 61px;
+
+      .btn-buyBeans {
+        width: 160px;
+        height: 48px;
+        border-radius: 24px;
+        margin-bottom: 16px;
+        color: @white;
+      }
+    }
+  }
+}

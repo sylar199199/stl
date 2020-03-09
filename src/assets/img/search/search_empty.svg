@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="320" viewBox="0 0 320 320">
+    <defs>
+        <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="94.247%">
+            <stop offset="0%" stop-color="#FFF" stop-opacity=".996"/>
+            <stop offset="100%" stop-color="#EFEFEF"/>
+        </linearGradient>
+        <filter id="b" width="172.6%" height="184.9%" x="-36.3%" y="-42.5%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
+        </filter>
+        <filter id="c" width="217.4%" height="217.4%" x="-58.7%" y="-58.7%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="20"/>
+        </filter>
+        <radialGradient id="e" r="49.703%" fx="50%" fy="50%" gradientTransform="matrix(0 -1 .9997 0 0 1)">
+            <stop offset="0%" stop-color="#DEDEDE"/>
+            <stop offset="34.137%" stop-color="#E5E5E5"/>
+            <stop offset="67.069%" stop-color="#E8E8E8"/>
+            <stop offset="100%" stop-color="#F5F5F5"/>
+        </radialGradient>
+        <ellipse id="d" cx="51.121" cy="51.105" rx="51.121" ry="51.105"/>
+        <linearGradient id="f" x1="22.172%" x2="82.756%" y1="16.847%" y2="99.969%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#D8D8D8"/>
+        </linearGradient>
+        <linearGradient id="h" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#E5E5E5"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="i" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#FBFBFB"/>
+        </linearGradient>
+        <linearGradient id="j" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#FBFBFB"/>
+            <stop offset="100%" stop-color="#E5E5E5"/>
+        </linearGradient>
+        <linearGradient id="k" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#E5E5E5"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FFF" d="M-800-259h1920v1920H-800z"/>
+        <g transform="translate(-800 27)">
+            <path fill="url(#a)" d="M836 27h248v212H836z" filter="url(#b)"/>
+            <ellipse cx="960" cy="50.511" fill="#F3F3F3" rx="65.386" ry="16.639" transform="rotate(-15 960 50.51)"/>
+            <g transform="translate(908.88)">
+                <ellipse cx="51.121" cy="51.105" fill="#FFF" filter="url(#c)" rx="51.121" ry="51.105"/>
+                <mask id="g" fill="#fff">
+                    <use xlink:href="#d"/>
+                </mask>
+                <use fill="url(#e)" xlink:href="#d"/>
+                <ellipse cx="15.455" cy="17.233" fill="url(#f)" mask="url(#g)" rx="4.161" ry="4.16"/>
+                <ellipse cx="79.356" cy="11.588" fill="#F1F1F1" mask="url(#g)" rx="5.647" ry="4.457"/>
+                <ellipse cx="84.409" cy="46.648" fill="#DCDCDC" mask="url(#g)" rx="4.755" ry="4.457"/>
+                <ellipse cx="30.91" cy="73.686" fill="#DCDCDC" mask="url(#g)" rx="4.755" ry="4.754"/>
+                <ellipse cx="33.288" cy="29.415" fill="#DCDCDC" mask="url(#g)" rx="4.755" ry="4.457"/>
+                <ellipse cx="51.418" cy="-1.486" fill="#EDEDED" mask="url(#g)" rx="4.458" ry="4.457"/>
+            </g>
+            <ellipse cx="960" cy="1146.296" fill="#FFF" rx="960" ry="959.704"/>
+            <g transform="translate(934.25 141.43)">
+                <path fill="url(#h)" d="M31.1 55.859a4.66 4.66 0 0 1 4.63 4.134l2.502 22.013-1.151-.001a16 16 0 0 1 9.642 11.713l4.702 23.813a7 7 0 0 1-6.944 8.355l-37.408-.406a7 7 0 0 1-6.75-8.548L5.684 93.28a16 16 0 0 1 9.551-11.274h-.78l2-22.002a4.557 4.557 0 0 1 4.538-4.144 4.161 4.161 0 0 1 4.16 4.16v20.798h1.784V60.02a4.161 4.161 0 0 1 4.161-4.161z"/>
+                <rect width="30.91" height="22.581" x="10.889" y="17.233" fill="#E5E5E5" rx="6"/>
+                <path fill="#D8D8D8" d="M10.889 32.089h4.161v1.188h-4.161zM37.638 32.089h4.161v1.188h-4.161z"/>
+                <rect width="8.322" height="17.827" x="16.833" y="38.032" fill="#D8D8D8" rx="4.161"/>
+                <rect width="8.322" height="17.827" x="26.938" y="38.032" fill="#D8D8D8" rx="4.161"/>
+                <rect width="8.322" height="17.827" x="16.833" y="35.655" fill="#E5E5E5" rx="4.161"/>
+                <rect width="8.322" height="17.827" x="26.938" y="35.655" fill="#E5E5E5" rx="4.161"/>
+                <ellipse cx="26.344" cy="10.696" fill="url(#i)" rx="10.7" ry="10.696"/>
+                <ellipse cx="26.344" cy="10.696" fill="url(#j)" rx="7.133" ry="7.131"/>
+                <rect width="23.777" height="27.335" x="14.455" y="13.073" fill="#D8D8D8" rx="4"/>
+                <rect width="21.399" height="23.77" x="15.644" y="14.262" fill="#E5E5E5" rx="4"/>
+                <path fill="#D8D8D8" d="M16.833 46.351h8.322v1.188h-8.322zM26.938 46.351h8.322v1.188h-8.322z"/>
+            </g>
+            <rect width="2.378" height="42.786" x="990.316" y="154.503" fill="#E5E5E5" rx="1.189"/>
+            <path fill="url(#k)" d="M991.432 197.289c.668 0 1.222.52 1.264 1.186l2.665 42.193h11.093a4 4 0 0 1 4 4v5.074a4 4 0 0 1-4 4h-11.455c-.669 0-1.222-.52-1.264-1.186l-3.417-54.08a1.116 1.116 0 0 1 1.114-1.187z"/>
+            <path fill="#E5E5E5" d="M992.1 154.503h12.265a2 2 0 0 1 2 2v7.885a2 2 0 0 1-2 2H992.1v-11.885z"/>
+        </g>
+    </g>
+</svg>

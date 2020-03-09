@@ -1,0 +1,202 @@
+@import "~@/style/variables.less";
+
+.video-detail-layer {
+  .content {
+    padding: 24px 0 90px;
+  }
+
+  .video-play-layer {
+    margin: 0 0 24px;
+    box-shadow: 0 12px 24px 0 rgba(195, 195, 198, 0.12);
+    background-color: @global-default2;
+    border-radius: 8px;
+
+    h2.title {
+      margin: 20px 0 10px;
+    }
+
+    .infinite {
+      width: 240px;
+      color: #fff;
+      border-radius: 0 8px 8px 0;
+
+      h3 {
+        height: 64px;
+        line-height: 64px;
+        padding: 0 5px 0 20px;
+        background-color: rgba(216, 216, 216, 0.04);
+        border-radius: 0 8px 8px 0;
+      }
+
+      .infinite-list {
+        padding: 0 5px 0 10px;
+        height: 440px;
+        overflow: auto;
+
+        &::-webkit-scrollbar-track {
+          display: none;
+        }
+
+        li {
+          height: 48px;
+          line-height: 48px;
+          cursor: pointer;
+          padding: 0 0 0 10px;
+
+          &:hover {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
+
+            svg {
+              opacity: 1;
+            }
+          }
+
+          span {
+            width: 180px;
+            margin: 0 7px 0 0;
+          }
+
+          svg {
+            opacity: 0.24;
+            color: #fff;
+            font-size: 12px;
+          }
+
+          &.active {
+            color: @global-primary;
+
+            svg {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    ::v-deep .video-player-right-menu {
+      .favorite-icon,
+      .share-icon-img-layer {
+        background-color: @global-default3;
+      }
+
+      .favorite-icon {
+        margin: 0 10px 0 0;
+        .icon-favorite {
+          color: @white;
+        }
+      }
+
+      .share-icon-img-layer {
+        height: 26px;
+
+        .svg-icon {
+          font-size: 24px;
+        }
+      }
+    }
+
+    ::v-deep .player-recommend-layer {
+      .el-col-12 {
+        &:nth-child(2n) {
+          .player-list-card {
+            float: right;
+          }
+        }
+      }
+
+      .video-list {
+        &:hover {
+          background: none;
+        }
+      }
+    }
+  }
+
+  .video-info {
+    margin: 0 0 35px;
+
+    h2.title {
+      font-size: 24px;
+      margin: 0 0 15px;
+    }
+
+    .play-icon {
+      font-size: 20px;
+      margin: 0 7px 0 0;
+    }
+
+    .key-word {
+      margin: 0 0 0 10px;
+
+      .key-word-tag {
+        margin: 0 5px 0 0;
+        cursor: pointer;
+      }
+    }
+
+    .opt-layer {
+      .share-icon,
+      .favorite-icon {
+        margin: 0 0 0 25px;
+      }
+
+      .pay-btn {
+        margin: 0 0 0 30px;
+        width: 140px;
+      }
+    }
+
+    .introduce {
+      position: relative;
+      margin: 20px 0 25px;
+      height: 60px;
+      overflow: hidden;
+      text-align: justify;
+      cursor: pointer;
+
+      &:hover {
+        color: @global-default4;
+      }
+
+      .more {
+        position: absolute;
+        background: linear-gradient(to left, #ffffff, #ffffff 36%, rgba(255, 255, 255, 0));
+        width: 60px;
+        height: 16px;
+        bottom: 1px;
+        right: 1px;
+        cursor: pointer;
+        color: #333;
+      }
+    }
+  }
+
+  .recommend-title {
+    margin: 0 0 30px;
+  }
+
+  .recommend-layer {
+    margin: 0 0 60px;
+  }
+
+  .comment-title {
+    margin: 0 0 30px;
+  }
+
+  .comment-layer {
+    .el-col {
+      > h2.title {
+        margin: 0 0 15px;
+      }
+    }
+
+    .more-comment {
+      width: 240px;
+      height: 40px;
+      cursor: pointer;
+      line-height: 40px;
+      border-radius: 8px;
+      background-color: @gray-bg-color;
+    }
+  }
+}

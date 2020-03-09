@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "SQVPLJE24J.com.bailun.huikao",
+                "paths": [ "/login/*", "/share/*", "/h5/*"]
+            }
+        ]
+    }
+}

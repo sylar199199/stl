@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="262" viewBox="0 0 240 262">
+    <defs>
+        <linearGradient id="a" x1="100%" x2="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFF7F4"/>
+            <stop offset="100%" stop-color="#FFF7F4" stop-opacity=".058"/>
+        </linearGradient>
+        <linearGradient id="b" x1="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFF7F4"/>
+            <stop offset="100%" stop-color="#FFF7F4" stop-opacity=".058"/>
+        </linearGradient>
+        <linearGradient id="c" x1="50%" x2="50%" y1="1.233%" y2="100%">
+            <stop offset="0%" stop-color="#FFF7F4" stop-opacity=".058"/>
+            <stop offset="100%" stop-color="#FFF7F4"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-90 -66)">
+        <circle cx="330" cy="66" r="48" fill="url(#a)"/>
+        <circle cx="90" cy="66" r="66" fill="url(#b)"/>
+        <circle cx="90" cy="328" r="90" fill="url(#c)"/>
+    </g>
+</svg>
