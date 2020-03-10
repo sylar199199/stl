@@ -144,7 +144,7 @@ export default {
       this.$refs["loginForm"].validateField("mobile", error => {
         //验证手机号码输入框
         if (!error) {
-          if (this.SMSValidInfo.sig) {
+          if (this.SMSValidInfo.sig || process.env.VUE_APP_MODE === "test") {
             let AuthCodeParam = {
               ...this.SMSValidInfo,
               code: this.form.code,

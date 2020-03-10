@@ -37,14 +37,15 @@
             <p class="title text-left" :style="{fontSize: textFontSize}">{{ data.title }}</p>
             <slot name="info">
               <div class="dollar text-muted">
-                <span>{{ data.tagCount }}{{ $t("commons.KnowledgePoint") }}</span>
-                <div v-if="!data.free" class="price fr">
+                <div v-if="!data.free" class="price fl">
+                  <img class="vertical-align-middle" src="@/assets/img/icon/price-icon.svg" />
+                  <span class="vertical-align-middle text-danger real-bean">{{ data.realBeanAmount }}</span>
                   <span v-if="data.virtualBeanAmount" class="origin-price vertical-align-middle">
                     {{ data.virtualBeanAmount }}
                   </span>
-                  <img class="vertical-align-middle" src="@/assets/img/icon/price.svg" />
-                  <span class="vertical-align-middle text-danger">{{ data.realBeanAmount }}</span>
                 </div>
+                <div class="free fl text-center" v-else>{{ $t("commons.free") }}</div>
+                <span class="chapter-count">Chapter {{ data.chapterCount }}</span>
               </div>
             </slot>
           </template>
@@ -151,6 +152,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "~@/style/variables";
+
 .article-list-card {
   position: relative;
   cursor: pointer;
@@ -205,13 +208,9 @@ export default {
           white-space: pre-wrap;
           font-size: 16px;
           color: #000;
-          height: 50px;
-          margin: 0 0 10px;
         }
         .title-off {
           white-space: pre-wrap;
-          height: 50px;
-          margin: 0 0 10px;
         }
 
         .dollar {
@@ -223,12 +222,29 @@ export default {
 
             .origin-price {
               text-decoration: line-through;
-              margin: 0 6px 0 0;
+              margin: 0 0 0 6px;
             }
 
             img {
               height: 16px;
             }
+
+            .real-bean {
+              margin-left: 5px;
+            }
+          }
+          .free {
+            width: 36px;
+            height: 20px;
+            font-size: 11px;
+            line-height: 20px;
+            color: @global-success;
+            border-radius: @border-radius-base;
+            border: 2px solid @global-success;
+          }
+
+          .chapter-count {
+            margin-left: 30px;
           }
         }
       }

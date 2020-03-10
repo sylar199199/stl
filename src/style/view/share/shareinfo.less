@@ -72,7 +72,7 @@
             height: 200px;
             margin: 5px 0;
             padding: 0 16px;
-            overflow-y: scroll;
+            overflow-y: auto;
             &::-webkit-scrollbar {
               width: 4px;
               border-radius: 2px;
@@ -104,7 +104,7 @@
 }
 
 .help-late-color {
-  background-color:#40281f;
+  background-color: #40281f;
   border-color: #40281f;
   color: @white;
 }
@@ -125,8 +125,24 @@
 }
 
 .help-list {
-  line-height: 30px;
+  position: relative;;
+  .common {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-left: 5px;
+    box-sizing: border-box;
+  }
+  .circle-empty {
+    opacity: 0.24;
+    border: 1px dashed #ccc;
+  }
 
+  .descript {
+    margin-left: 15px;;
+    top: 0;
+    position: absolute;
+  }
   .help-count {
     color: #e8275c;
   }

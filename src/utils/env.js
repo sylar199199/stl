@@ -124,6 +124,7 @@ const currencyText = {
   CNY: "CNY",
   TWD: "TWD"
 };
+const topHeaderNav = ["home", "articleList", "videoList"];
 const weixinUrl = "https://open.weixin.qq.com/connect/qrconnect";
 const QQUrl = "https://graph.qq.com/oauth2.0/authorize";
 const weiboUrl = "https://api.weibo.com/oauth2/authorize";
@@ -131,7 +132,7 @@ const facebookLoginUrl = "https://www.facebook.com/v6.0/dialog/oauth";
 const googleLoginUrl = "https://accounts.google.com/o/oauth2/v2/auth";
 const linkedinUri = "https://www.linkedin.com/uas/oauth2/authorization";
 const redirect_uri = `${process.env.VUE_APP_WAP_BASE_URI}/api/login/thirdPartLoginCallBack`;
-const webSharePage = `${window.location.protocol}/${window.location.host}/activity/share/shareInfo`;
+const webSharePage = `${window.location.protocol}//${window.location.host}/activity/share/shareInfo`;
 const H5bSharePage = `${process.env.VUE_APP_H5_BASE_URI}/api/vue/index.html#/activity/share`;
 const H5bArticleInfoPage = `${process.env.VUE_APP_WAP_BASE_URI}/api/zhcn/views/html/articleList.html`;
 const H5bArticleDetailPage = `${process.env.VUE_APP_WAP_BASE_URI}/api/zhcn/views/html/articleDetail.html`;
@@ -151,6 +152,7 @@ export {
   payStatus,
   currencyCode,
   currencyText,
+  topHeaderNav,
   weixinUrl,
   QQUrl,
   weiboUrl,

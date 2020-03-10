@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="172" height="172" viewBox="0 0 172 172">
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="86" cy="86" r="86" fill="#F6F7F9"/>
+        <ellipse cx="55" cy="51" stroke="#232A34" stroke-width="3" rx="6" ry="9"/>
+        <path fill="#FB4D1F" stroke="#232A34" stroke-width="3" d="M73 61.925L73 44 130 44 130 88 73 88 73 76.318"/>
+        <path stroke="#232A34" stroke-width="3" d="M59.47 82.208v25.87H49v-25.87h-3.692v-16.76C45.308 62.466 49 60 55 60c4 0 6.69 1.082 8.068 3.245l2.766 10.624L86 60l12.842 12.842 19.544-19.544h-9.029"/>
+        <path stroke="#232A34" stroke-width="3" d="M52 60H58V76H52zM41 130c0-6.075 4.925-11 11-11h8c6.075 0 11 4.925 11 11M71 130c0-6.075 4.925-11 11-11h8c6.075 0 11 4.925 11 11M101 130c0-6.075 4.925-11 11-11h8c6.075 0 11 4.925 11 11M101.5 88L101.5 108.5M131.5 108.5L39.5 108.5"/>
+        <ellipse cx="56" cy="108.5" fill="#F6F7F9" stroke="#232A34" stroke-width="3" rx="9" ry="10.5"/>
+        <ellipse cx="86" cy="108.5" fill="#F6F7F9" stroke="#232A34" stroke-width="3" rx="9" ry="10.5"/>
+        <ellipse cx="116" cy="108.5" fill="#F6F7F9" stroke="#232A34" stroke-width="3" rx="9" ry="10.5"/>
+    </g>
+</svg>

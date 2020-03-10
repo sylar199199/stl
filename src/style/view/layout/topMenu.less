@@ -1,37 +1,70 @@
-@import '~@/style/variables';
+@import "~@/style/variables";
 
 .menu-top {
-  ::v-deep .search-input {
-    width: 480px;
-    margin: 0 0 0 150px;
+  .nav-tab-layer {
+    width: 380px;
+      li {
+        position: relative;
+        display: inline-block;
+        height: 36px;
+        line-height: 36px;
+        padding: 0 45px;
+        text-align: center;
+        font-size: @font-size-lg;
+        cursor: pointer;
 
-    .el-input__prefix, .el-input__suffix {
-      top: 5.5px;
-    }
+        &.active {
+          &::before {
+            content: "";
+            width: 32px;
+            height: 4px;
+            background-color: @global-muted4;
+            position: absolute;
+            bottom: 0;
+          }
+        }
+      }
+  }
 
-    .el-input__inner {
-      border-radius: 18px;
+  .search-icon {
+    width: 30px;
+    height: 30px;
+    margin: 7px 0 0 306px;
+  }
+
+  .search-input-bar {
+    ::v-deep .search-input {
+      width: 263px;
       height: 36px;
-      border: none;
-      padding-left: 35px;
-      background-color: @gray-bg-color;
-    }
 
+      .el-input__prefix,
+      .el-input__suffix {
+        top: 5.5px;
+      }
 
-    .svg-icon {
-      margin: 5px 0 0;
+      .el-input__inner {
+        border-radius: 18px;
+        height: 36px;
+        border: none;
+        padding-left: 35px;
+        background-color: @gray-bg-color;
+      }
+
+      .svg-icon {
+        margin: 5px 0 0;
+      }
     }
   }
 
   .right-menu-list {
     display: inline-block;
-    width: 166px;
+    width: 86px;
     margin: 4px 0 0;
 
     .notice {
       width: 16px;
       display: inline-block;
-      margin: 5px 20px 0;
+      margin-top: 5px;
 
       ::v-deep .el-badge__content {
         top: -10px;
@@ -40,17 +73,6 @@
 
       img {
         float: left;
-      }
-    }
-
-    .my-learn-text {
-      height: 45px;
-      margin-top: 3px;
-
-      .my-learn {
-        width: 56px;
-        color: @global-default3;
-        cursor: pointer;
       }
     }
 
@@ -86,116 +108,10 @@
     font-size: @font-size-sm;
     color: @global-default3;
   }
-
 }
 
-.my-learn-dropdown {
-  border-radius: 6px;
-  padding: 0;
-  margin: 0;
-  font-size: 13px;
-  box-shadow: 0 8px 16px 0 rgba(91, 100, 110, 0.24);
-  width: 320px;
 
-  ::v-deep .my-learn-tabs {
-    .el-tabs__header {
-      margin: 0;
-    }
-
-    .el-tabs__nav-wrap {
-      &:after {
-        background-color: @gray-bg-color;
-        height: 1px;
-      }
-    }
-
-    .el-tabs__nav {
-      width: 100%;
-      height: 48px;
-      line-height: 48px;
-
-      .el-tabs__active-bar {
-        display: none;
-      }
-
-      .el-tabs__item {
-        height: 48px;
-        padding: 0;
-        width: 50%;
-        line-height: 48px;
-        text-align: center;
-        font-size: @font-size-lg;
-        overflow: hidden;
-
-        &.is-active {
-          &::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: -4px;
-            margin-left: -4px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: @global-primary;
-          }
-        }
-      }
-    }
-
-    .tab-content {
-      .content {
-        height: 235px;
-        overflow-y: auto;
-        padding: 8px;
-      }
-
-      ::v-deep .article-list-card {
-        .wrap {
-          .right-box {
-            .info {
-              .dollar {
-                margin-top: 3px;
-              }
-            }
-          }
-        }
-      }
-
-      ::v-deep .video-list-card {
-        .img-box {
-          margin-bottom: 0;
-        }
-      }
-
-      .empty-layer {
-        padding: 20px 0 0;
-        margin: 0 auto;
-        width: 160px;
-
-        img {
-          width: 100%;
-          margin: 0 0 15px;
-        }
-      }
-    }
-  }
-
-  .card-box {
-    height: 342px;
-  }
-
-  .look-all {
-    height: 48px;
-    line-height: 48px;
-    cursor: pointer;
-    color: @global-muted;
-    font-size: @font-size-sm;
-    text-align: center;
-  }
-}
-
-.info-dropdown[x-placement^=bottom] {
+.info-dropdown[x-placement^="bottom"] {
   width: 240px;
   padding: 0;
   margin: 0;
@@ -226,7 +142,7 @@
         .nick-name {
           width: 96px;
           padding-right: 15px;
-          display: inline-block;;
+          display: inline-block;
         }
       }
 
@@ -251,5 +167,3 @@
     }
   }
 }
-
-

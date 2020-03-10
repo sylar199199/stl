@@ -305,7 +305,7 @@ export default {
     webShareUrl() {
       return this.shareType === 2
         ? `${webSharePage}?fromUid=${this.userUid}&objId=${this.videoId}&type=2&langId=${this.currentLanguage}` //web端分享活动地址
-        : window.location.href; //web端视频详情地址
+        : `${window.location.href}?langId=${this.currentLanguage}`; //web端视频详情地址
     },
     shareWeiXinUrl() {
       return this.shareType === 2
@@ -333,6 +333,13 @@ export default {
           this.addPlayHistory(Math.floor(playerPlugins.currentTime() * 1000)); //每隔60秒保存播放记录
         }
       }, 30000);
+    }
+  },
+  beforeDestroy() {
+    if (this.$refs["videoPlayer"]) {
+      //销毁videoPlayer组件
+      this.$refs["videoPlayer"].dispose();
+      playerPlugins = null;
     }
   },
   destroyed() {
@@ -692,7 +699,8 @@ export default {
             avatar: this.userAvatar,
             createTime: res.createTime,
             content: opt.comment,
-            replyList: []
+            replyList: [],
+            inputShow: false
           });
         })
         .catch(res => {

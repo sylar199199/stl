@@ -30,26 +30,30 @@
                     </router-link>
                   </template>
                 </el-row>
-                <el-row class="help-list">
-                  <img
-                    v-for="(item, index) in contentObj.recordModelList"
+                <div class="help-list">
+                  <div class="inline-block" v-for="(item, index) in contentObj.recordModelList" :key="index">
+                    <img class="circle-avatar common" :src="item.avatar" />
+                  </div>
+                  <div
+                    class="circle-empty inline-block common"
+                    v-for="(item, index) in 10 - helpLength"
                     :key="index"
-                    :src="item.avatar"
-                    class="img-avator vertical-align-middle"
-                  />
-                  <span v-if="helpCount === 10">
-                    已被助力
-                    <span class="help-count">10</span>
-                    次，汇豆已全部拿到
-                  </span>
-                  <span v-else>
-                    已被助力
-                    <span class="help-count">{{ helpCount }}</span>
-                    次，还差
-                    <span class="help-count">{{ 10 - helpCount }}</span>
-                    次拿到全部汇豆
-                  </span>
-                </el-row>
+                  ></div>
+                  <div class="descript inline-block">
+                    <p v-if="helpCount === 10">
+                      已被助力
+                      <span class="help-count">10</span>
+                      次，汇豆已全部拿到
+                    </p>
+                    <p v-else>
+                      已被助力
+                      <span class="help-count">{{ helpCount }}</span>
+                      次，还差
+                      <span class="help-count">{{ 10 - helpCount }}</span>
+                      次拿到全部汇豆
+                    </p>
+                  </div>
+                </div>
                 <el-row class="progress-layer">
                   <el-col :span="13">
                     <el-progress :percentage="percentage" class="progress-bar" :show-text="false"></el-progress>
@@ -84,12 +88,12 @@
             </el-row>
           </div>
           <el-row>
-            <el-col :span="12" :class="userUid === paramsObj.fromUid ? 'hidden' : ''">
+            <el-col :span="12" :class="{hidden: helpLength === 0}">
               <el-row :gutter="20">
                 <el-col :span="5">
                   <div class="carousel">
                     <ul class="text-sm spefic-color">
-                      <li v-for="(item, index) in helpList" :key="index">"{{ item.nickname }}"</li>
+                      <li v-for="(item, index) in contentObj.recordModelList" :key="index">"{{ item.nickname }}"</li>
                     </ul>
                   </div>
                 </el-col>
@@ -99,10 +103,7 @@
               </el-row>
             </el-col>
             <el-col :span="12" class="text-right">
-              <el-button
-                class="text-lg help-late-color"
-                v-if="contentObj.recordModelList && contentObj.recordModelList.length === 10"
-              >
+              <el-button class="text-lg help-late-color" v-if="contentObj.recordModelList && helpLength === 10">
                 遗憾，来晚了一步
               </el-button>
               <el-button type="primary" class="text-lg" @click="helpToObtain" v-else>
@@ -137,8 +138,7 @@ export default {
       shareLoading: true,
       contentObj: {
         shareContent: {}
-      }, //分享内容
-      helpList: [{nickname: "哈哈1"}, {nickname: "哈哈2"}, {nickname: "哈哈3"}, {nickname: "哈哈4"}]
+      } //分享内容
     };
   },
   components: {
@@ -150,11 +150,14 @@ export default {
       return (100 / 1000) * 100;
     },
     helpCount() {
-      return this.contentObj.recordModelList ? this.contentObj.recordModelList.length : 0;
+      return this.contentObj.recordModelList ? this.helpLength : 0;
     },
     paramsObj() {
       //url参数对象
       return this.$route.query;
+    },
+    helpLength() {
+      return this.contentObj.recordModelList ? this.contentObj.recordModelList.length : 0;
     }
   },
   created() {
@@ -173,6 +176,7 @@ export default {
         .then(res => {
           this.contentObj = res;
           this.shareCard = res.shareContent;
+          console.log("contentObj", res);
         });
     },
     //助力好友领取汇豆

@@ -199,10 +199,10 @@ export default {
       return "0";
     },
     webShareUrl() {
-      return `${webSharePage}?fromUid=${this.userUid}&objId=${this.productId}&type=${this.product.courseType}`;
+      return `${webSharePage}?fromUid=${this.userUid}&objId=${this.productId}&type=${this.product.courseType}&langId=${this.currentLanguage}`;
     },
     shareWeiXinUrl() {
-      return `${H5bSharePage}?id=${this.productId}&userId=${this.userUid}&type=${this.product.courseType}`;
+      return `${H5bSharePage}?id=${this.productId}&userId=${this.userUid}&type=${this.product.courseType}&langId=${this.currentLanguage}`;
     }
   },
   created() {

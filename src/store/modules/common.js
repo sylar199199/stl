@@ -29,7 +29,8 @@ const permission = {
     favorite: {
       article: getStore("articleFavoriteList") || [],
       video: getStore("videoFavoriteList") || []
-    }
+    },
+    currentTabName: 0
   },
   getters: {
     rightMenuVisible: state => state.rightMenu.visible, // 右侧菜单是否显示
@@ -44,7 +45,8 @@ const permission = {
     topMenuRecentLearn: state => state.recentLearn, //最近学习
     currentLanguage: state => state.language, //当前语言
     loginDialogVisible: state => state.loginDialogVisible, //登录弹窗状态
-    currentFavoriteList: state => state.favorite
+    currentFavoriteList: state => state.favorite,
+    currentNavTab: state => state.currentTabName //当前导航tab
   },
   actions: {},
   mutations: {
@@ -79,6 +81,9 @@ const permission = {
     },
     [types.SET_CURRENT_LANGUAGE]: (state, val) => {
       state.language = val; //设置當前語言
+    },
+    [types.SET_CURRENT_NAV_TAB]: (state, val) => {
+      state.currentTabName = val; //设置当前导航tab
     }
   }
 };

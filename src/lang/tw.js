@@ -66,6 +66,7 @@ const messages = {
     balance: "餘額",
     startReadding: "開始閱讀",
     sendValidCodeSuccess: "發送驗證碼成功",
+    free: "免費",
     menuList: [
       {
         label: "閱讀",
@@ -79,7 +80,16 @@ const messages = {
     backToTop: "返回頂部"
   },
   index: {
-    historicalRecord: "曆史記錄"
+    historicalRecord: "曆史記錄",
+    avatangeOne: "外匯知識學習平台",
+    avatangeTwo: "行業資源優勢",
+    avatangeThree: "實現財富增值",
+    avatangeOneTipsOne: "是一個多元化的",
+    avatangeOneTipsTwo: "擁有超過150多名專業外匯領域的教師和編輯",
+    avatangeTwoTipsOne: "依託豐富的互聯網經驗及",
+    avatangeTwoTipsTwo: "已吸引了全球16個國家與地區的外匯投資者註冊",
+    avatangeThreeTipsOne: "目前有超過20萬的外匯投資者在",
+    avatangeThreeTipsTwo: "幫助越來越多的用戶掌握外匯投資理財既能，"
   },
   // 設置
   setting: {

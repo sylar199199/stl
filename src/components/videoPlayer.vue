@@ -168,6 +168,13 @@ export default {
         }
       });
     },
+    dispose() {
+      //销毁组件
+      if (playerPlugins) {
+        playerPlugins.dispose();
+        playerPlugins = null;
+      }
+    },
     onVideoOperationHandle(e) {
       //键盘操作
       let vol = playerPlugins.volume(); //1代表100%音量，每次增减0.1

@@ -399,21 +399,19 @@ export default {
 
   .reply-info {
     display: inline-block;
+    max-height: 140px;
     margin-left: 5px;
     padding: 15px;
     border-radius: 8px;
     background-color: #f6f7f9;
+    overflow-y: auto;
 
     .reply-input {
       width: 962px;
-      height: 40px;
-      overflow: auto;
 
       &:focus {
-        height: 140px;
         outline: none;
         border-radius: 8px;
-
         &:before {
           content: none;
         }

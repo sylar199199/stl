@@ -27,7 +27,7 @@ router.beforeEach((to, from, next) => {
     next(to.path);
   }
   if (to.query.langId) {
-    store.commit(types.SET_CURRENT_LANGUAGE, to.query.langId); //保存用户信息
+    store.commit(types.SET_CURRENT_LANGUAGE, Number(to.query.langId) || 1); //保存用户信息
   }
   getUserInfo()
     .then(res => {

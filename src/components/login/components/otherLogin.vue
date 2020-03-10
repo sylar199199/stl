@@ -160,7 +160,7 @@ export default {
       return encodeURIComponent(`${this.currentLanguage}|6|${location.pathname}|1`);
     },
     linkedinUri() {
-      return `${linkedinUri}?response_type=code&client_id=78lnt5oncsnmq0&redirect_uri=${encodeURI(
+      return `${linkedinUri}?response_type=code&scope=r_liteprofile&client_id=78lnt5oncsnmq0&redirect_uri=${encodeURI(
         redirect_uri
       )}&state=${this.linkedinState}`;
     },

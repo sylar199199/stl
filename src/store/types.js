@@ -8,6 +8,7 @@ export const SET_LOGIN_DIALOG_VISIBLE = "SET_LOGIN_DIALOG_VISIBLE"; //设置弹�
 export const SET_FAVORITE_LIST = "SET_FAVORITE_LIST"; //设置更新后的收藏
 export const SET_CURRENT_LANGUAGE = "SET_CURRENT_LANGUAGE"; //设置当前语言
 export const SET_USERAMOUNT = "SET_USERAMOUNT"; //设置当前汇豆数
+export const SET_CURRENT_NAV_TAB = "SET_CURRENT_NAV_TAB"; //设置当前导航tab
 //路由
 export const SET_ROUTERS = "SET_ROUTERS"; //设置登录后路由权限
 //注册

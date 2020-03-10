@@ -64,6 +64,7 @@ const messages = {
     balance: "余额",
     startReadding: "开始阅读",
     sendValidCodeSuccess: "发送验证码成功",
+    free: "免费",
     menuList: [
       {
         label: "阅读",
@@ -77,7 +78,16 @@ const messages = {
     backToTop: "返回顶部"
   },
   index: {
-    historicalRecord: "历史记录"
+    historicalRecord: "历史记录",
+    avatangeOne: "外汇知识学习平台",
+    avatangeTwo: "行业资源优势",
+    avatangeThree: "实现财富增值",
+    avatangeOneTipsOne: "是一个多元化的",
+    avatangeOneTipsTwo: "拥有超过150多名专业外汇领域的教师和编辑",
+    avatangeTwoTipsOne: "依托丰富的互联网经验及",
+    avatangeTwoTipsTwo: "已吸引了全球16个国家与地区的外汇投资者注册",
+    avatangeThreeTipsOne: "目前有超过20万的外汇投资者在",
+    avatangeThreeTipsTwo: "帮助越老越多的用户掌握外汇投资理财技能，"
   },
   //设置
   setting: {

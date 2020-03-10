@@ -1,216 +1,121 @@
 <template>
   <div class="menu-top" ref="menuTop">
     <!--导航搜索框-->
-    <el-input
-      size="small"
-      class="search-input"
-      :placeholder="$t('layout.searchCourse')"
-      v-model="searchText"
-      @focus="showEnter = true"
-      @blur="showEnter = false"
-      @keyup.native.enter="onSearchEnterHandle"
-    >
-      <img slot="prefix" src="@/assets/icon/navibar-search.svg" class="vertical-align-middle" />
-      <img
-        v-show="searchText.length"
-        @click="onSearchEnterHandle"
-        slot="suffix"
-        src="@/assets/icon/navibar-enter.svg"
-        class="vertical-align-middle pointer"
-      />
-    </el-input>
-    <!--右侧菜单开始-->
-    <div class="right-menu-list fr">
-      <!--已登录-->
-      <template v-if="userName">
-        <slot name="rightMenu">
-          <!--我的学习下拉框-->
-          <el-dropdown
-            :offset="20"
-            class="my-learn-text fl"
-            :hide-timeout="500"
-            @visible-change="onHoverLearnDropdownHandle"
+    <el-row>
+      <el-col :span="14">
+        <keep-alive>
+          <ul class="nav-tab-layer fr" :style="{color: fontColor}">
+            <li
+              v-for="item in navList"
+              :key="item.value"
+              :class="{active: activeIndex === item.value}"
+              @click="onChangeTabsHandle(item.value)"
+            >
+              {{ item.label }}
+            </li>
+          </ul>
+        </keep-alive>
+      </el-col>
+      <el-col :span="7">
+        <div class="search-icon fr" v-if="isInputShow">
+          <img class="vertical-align-middle pointer" :src="searchIcon" @click="isInputShow = false" />
+        </div>
+        <div class="search-input-bar fr" v-else>
+          <el-input
+            size="small"
+            class="search-input"
+            :placeholder="$t('layout.searchCourse')"
+            v-model="searchText"
+            @focus="showEnter = true"
+            @blur="showEnter = false"
           >
-            <div class="my-learn">{{ $t("layout.myStudy") }}</div>
-            <el-dropdown-menu class="my-learn-dropdown">
-              <div class="card-box">
-                <el-tabs class="default-tabs my-learn-tabs" v-model="activeName">
-                  <el-tab-pane
-                    v-loading="myLearnLoading"
-                    :label="$t('commons.read')"
-                    name="article"
-                    class="tab-content scroll-bar"
-                  >
-                    <template v-if="topMenuRecentLearn.article.length">
-                      <div class="content scroll-bar">
-                        <li v-for="item in topMenuRecentLearn.article" :key="item.id">
-                          <router-link
-                            v-if="item.chapterCount === 1"
-                            target="_blank"
-                            :to="{
-                              name: 'chapterDetails',
-                              params: {articleId: item.courseId, chapterId: item.chapterId}
-                            }"
-                          >
-                            <article-list-card
-                              class="article-list-card"
-                              :data="item"
-                              width="296px"
-                              height="104px"
-                              cover-width="64px"
-                              cover-height="80px"
-                              text-box-font-size="12px"
-                            >
-                              <p class="text-muted text-xs" slot="info">{{ $t("layout.watchTo") }}{{ item.idx }}章</p>
-                            </article-list-card>
-                          </router-link>
-                          <router-link
-                            v-else
-                            target="_blank"
-                            v-for="item in topMenuRecentLearn.article"
-                            :key="item.id"
-                            :to="{name: 'articleInfo', params: {articleId: item.courseId}}"
-                          >
-                            <article-list-card
-                              class="article-list-card"
-                              :data="item"
-                              width="296px"
-                              height="104px"
-                              cover-width="64px"
-                              cover-height="80px"
-                              text-box-font-size="12px"
-                            >
-                              <p class="text-muted text-xs" slot="info">{{ $t("layout.watchTo") }}{{ item.idx }}章</p>
-                            </article-list-card>
-                          </router-link>
-                        </li>
-                      </div>
-                      <div class="look-all text-center" @click="onRouterLinkHandle('historyRecord', 0)">
-                        查看全部
-                      </div>
-                    </template>
-                    <template v-else>
-                      <div class="empty-layer text-center">
-                        <img src="@/assets/img/search/search_empty.svg" />
-                        <p class="text-muted">{{ $t("layout.noData") }}</p>
-                      </div>
-                    </template>
-                  </el-tab-pane>
-                  <el-tab-pane
-                    v-loading="myLearnLoading"
-                    :label="$t('commons.video')"
-                    name="video"
-                    class="tab-content scroll-bar"
-                  >
-                    <template v-if="topMenuRecentLearn.video.length">
-                      <div class="content scroll-bar">
-                        <router-link
-                          target="_blank"
-                          v-for="item in topMenuRecentLearn.video"
-                          :key="item.id"
-                          :to="{name: 'videoDetail', params: {id: item.courseId}}"
-                        >
-                          <video-list-card
-                            class="video-list-card"
-                            type="horizontal"
-                            :data="item"
-                            width="296px"
-                            height="81px"
-                            coverWidth="112px"
-                            coverHeight="64px"
-                            textFontSize="14px"
-                          >
-                            <p class="text-muted text-xs" slot="info">{{ $t("layout.watchTo") }} {{ item.idx }}集</p>
-                          </video-list-card>
-                        </router-link>
-                      </div>
-                      <div class="look-all text-center" @click="onRouterLinkHandle('historyRecord', 1)">
-                        查看全部
-                      </div>
-                    </template>
-                    <template v-else>
-                      <div class="empty-layer text-center">
-                        <img src="@/assets/img/search/search_empty.svg" />
-                        <p class="text-muted">{{ $t("layout.noData") }}</p>
-                      </div>
-                    </template>
-                  </el-tab-pane>
-                </el-tabs>
+            <img
+              slot="prefix"
+              src="@/assets/icon/navibar-search.svg"
+              class="vertical-align-middle pointer"
+              @click="onSearchEnterHandle"
+            />
+            <img
+              slot="suffix"
+              src="@/assets/img/icon/close-icon.svg"
+              class="vertical-align-middle pointer"
+              @click="isInputShow = true"
+            />
+          </el-input>
+        </div>
+      </el-col>
+      <el-col :span="3">
+        <!--右侧菜单开始-->
+        <div class="right-menu-list fr">
+          <!--已登录-->
+          <template v-if="userName">
+            <slot name="rightMenu">
+              <!--消息-->
+              <div class="notice pointer">
+                <template v-if="userInformationCount > 0">
+                  <el-badge :value="userInformationCount > 99 ? '99+' : userInformationCount" class="item">
+                    <img :src="noticeIcon" @click="onRouterLinkHandle(info.name, 0)" class="vertical-align-middle" />
+                  </el-badge>
+                </template>
+                <template v-else>
+                  <img :src="noticeIcon" @click="onRouterLinkHandle(info.name, 0)" class="vertical-align-middle" />
+                </template>
               </div>
-            </el-dropdown-menu>
-          </el-dropdown>
-          <!--消息-->
-          <div class="notice pointer fl">
-            <template v-if="userInformationCount > 0">
-              <el-badge :value="userInformationCount > 99 ? '99+' : userInformationCount" class="item">
-                <img
-                  src="@/assets/icon/notice.svg"
-                  @click="onRouterLinkHandle(info.name, 0)"
-                  class="vertical-align-middle"
-                />
-              </el-badge>
-            </template>
-            <template v-else>
-              <img
-                src="@/assets/icon/notice.svg"
-                @click="onRouterLinkHandle(info.name, 0)"
-                class="vertical-align-middle"
-              />
-            </template>
-          </div>
-          <router-link class="user-link fr" :to="{name: 'buyCourse'}">
-            <el-divider v-if="userName" direction="vertical"></el-divider>
-            <!--个人头像用户中心下拉列表-->
-            <el-dropdown>
-              <div class="user-avatar">
-                <el-avatar class="vertical-align-middle el-avatar-default" :src="userAvatar"></el-avatar>
-              </div>
-              <el-dropdown-menu slot="dropdown" class="info-dropdown">
-                <el-dropdown-item class="user-info cf">
-                  <el-avatar class="el-avatar-default head-pic fl" :src="userAvatar"></el-avatar>
-                  <div class="info-box fr">
-                    <div class="info">
-                      <span class="nick-name text-truncate vertical-align-middle">{{ userName }}</span>
-                      <level-explain class="level-explain vertical-align-middle"></level-explain>
-                    </div>
-                    <el-progress
-                      class="default-progress progress"
-                      :percentage="levelPercent"
-                      :stroke-width="4"
-                      :show-text="false"
-                    ></el-progress>
+              <router-link class="user-link fr" :to="{name: 'buyCourse'}">
+                <el-divider v-if="userName" direction="vertical"></el-divider>
+                <!--个人头像用户中心下拉列表-->
+                <el-dropdown>
+                  <div class="user-avatar">
+                    <el-avatar class="vertical-align-middle el-avatar-default" :src="userAvatar"></el-avatar>
                   </div>
-                </el-dropdown-item>
-                <div class="my-list user-menu-list">
-                  <el-dropdown-item
-                    @click.native="onRouterLinkHandle(item.name, 0)"
-                    v-for="item in $t('layout.userMenuList')"
-                    :key="item.title"
-                  >
-                    <div class="item-content">
-                      <icon-svg
-                        class="text-icon text-muted2 vertical-align-middle inline-block"
-                        :icon-class="'icon-' + item.icon"
-                      ></icon-svg>
-                      <span class="text-default vertical-align-middle">{{ item.title }}</span>
+                  <el-dropdown-menu slot="dropdown" class="info-dropdown">
+                    <el-dropdown-item class="user-info cf">
+                      <el-avatar class="el-avatar-default head-pic fl" :src="userAvatar"></el-avatar>
+                      <div class="info-box fr">
+                        <div class="info">
+                          <span class="nick-name text-truncate vertical-align-middle">{{ userName }}</span>
+                          <level-explain class="level-explain vertical-align-middle"></level-explain>
+                        </div>
+                        <el-progress
+                          class="default-progress progress"
+                          :percentage="levelPercent"
+                          :stroke-width="4"
+                          :show-text="false"
+                        ></el-progress>
+                      </div>
+                    </el-dropdown-item>
+                    <div class="my-list user-menu-list">
+                      <el-dropdown-item
+                        @click.native="onRouterLinkHandle(item.name, 0)"
+                        v-for="item in $t('layout.userMenuList')"
+                        :key="item.title"
+                      >
+                        <div class="item-content">
+                          <icon-svg
+                            class="text-icon text-muted2 vertical-align-middle inline-block"
+                            :icon-class="'icon-' + item.icon"
+                          ></icon-svg>
+                          <span class="text-default vertical-align-middle">{{ item.title }}</span>
+                        </div>
+                      </el-dropdown-item>
                     </div>
-                  </el-dropdown-item>
-                </div>
-                <el-dropdown-item class="logout text-center" divided @click.native="onClickLogoutHandle">
-                  {{ $t("layout.loginout") }}
-                </el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
-          </router-link>
-        </slot>
-      </template>
-      <!-- 未登录 -->
-      <p v-else class="text-right">
-        <a class="vertical-align-middle font-class" @click="onLoginPopVisible(true)">
-          {{ $t("layout.loginRegister") }}
-        </a>
-      </p>
-    </div>
+                    <el-dropdown-item class="logout text-center" divided @click.native="onClickLogoutHandle">
+                      {{ $t("layout.loginout") }}
+                    </el-dropdown-item>
+                  </el-dropdown-menu>
+                </el-dropdown>
+              </router-link>
+            </slot>
+          </template>
+          <!-- 未登录 -->
+          <p v-else class="text-right">
+            <a class="vertical-align-middle font-class" :style="{color: fontColor}" @click="onLoginPopVisible(true)">
+              {{ $t("layout.loginRegister") }}
+            </a>
+          </p>
+        </div>
+      </el-col>
+    </el-row>
     <template v-if="loginDialogVisible">
       <login-pop :dialogVisible="loginDialogVisible" @close="onLoginPopVisible(false)"></login-pop>
     </template>
@@ -222,17 +127,19 @@ import {mapGetters, mapMutations} from "vuex";
 import * as types from "@/store/types";
 import {formatDate, trim} from "@/utils/mUtils";
 import * as userApi from "@/api/user";
-import articleListCard from "@/components/articleCard/list";
-import videoListCard from "@/components/videoListCard";
 import levelExplain from "@/components/levelExplain";
 import {asyncRouterMap} from "@/router";
 import {userLevelPercent} from "@/utils/mUtils";
-
+import {topHeaderNav} from "@/utils/env";
 export default {
   name: "top-menu",
+  props: {
+    scrollHeight: {
+      type: Number,
+      default: 0
+    }
+  },
   components: {
-    articleListCard,
-    videoListCard,
     levelExplain,
     LoginPop: () => import("@/components/login/loginPop")
   },
@@ -248,10 +155,16 @@ export default {
         name: "myInformation"
       },
       showEnter: false,
-      activeName: "article",
       myLearnIsFirst: true,
       myLearnLoading: true,
-      searchText: ""
+      searchText: "",
+      isInputShow: true,
+      navList: [
+        {label: "首页", value: 0},
+        {label: "文章", value: 1},
+        {label: "视频", value: 2}
+      ],
+      scrollFixedHeight: 1080
     };
   },
   computed: {
@@ -263,33 +176,49 @@ export default {
       "loginDialogVisible",
       "userUid",
       "userInformationCount",
-      "userTotalScore"
+      "userTotalScore",
+      "currentNavTab"
     ]),
     isShowEnterIcon() {
       return this.showEnter && this.searchText;
     },
     levelPercent() {
       return userLevelPercent(this.userTotalScore);
+    },
+    activeIndex: {
+      get() {
+        return this.currentNavTab;
+      },
+      set(val) {
+        this[types.SET_CURRENT_NAV_TAB](val);
+      }
+    },
+    fontColor() {
+      return this.scrollHeight <= this.scrollFixedHeight ? "#fff" : "#353c46";
+    },
+    searchIcon() {
+      return this.scrollHeight <= this.scrollFixedHeight
+        ? require("@/assets/img/icon/nav-search-white.svg")
+        : require("@/assets/img/icon/nav-search-black.svg");
+    },
+    noticeIcon() {
+      return this.scrollHeight <= this.scrollFixedHeight
+        ? require("@/assets/img/icon/nav-notice-white.svg")
+        : require("@/assets/img/icon/nav-notice-black.svg");
     }
   },
   watch: {
-    searchText(val) {
-      // debounce(() => {
-      //   if (!val) {
-      //     this.$router.push(this.prevRouter);
-      //   }
-      // }, 1000);
-    },
-    activeName(type) {
-      if (type === "video") {
-        this.getVideoLearnList();
-      } else {
-        this.getArticleLearnList();
-      }
+    activeIndex(val) {
+      this.$router.push({name: topHeaderNav[val]});
     }
   },
   methods: {
-    ...mapMutations([types.SET_RECENT_LEARN, types.SET_LOGIN_DIALOG_VISIBLE, types.SET_LOGIN_CLEAR]),
+    ...mapMutations([
+      types.SET_RECENT_LEARN,
+      types.SET_LOGIN_DIALOG_VISIBLE,
+      types.SET_LOGIN_CLEAR,
+      types.SET_CURRENT_NAV_TAB
+    ]),
     onRouterLinkHandle(name, type) {
       this.$router.push({
         name: name,
@@ -301,16 +230,6 @@ export default {
     onSearchEnterHandle() {
       if (this.searchText) {
         this.doGetSearchList(this.searchText);
-      }
-    },
-    onHoverLearnDropdownHandle(visible) {
-      //显示隐藏我的学习下拉
-      if (visible) {
-        if (this.activeName === "article") {
-          this.getArticleLearnList();
-        } else {
-          this.getVideoLearnList();
-        }
       }
     },
     getArticleLearnList() {
@@ -387,6 +306,9 @@ export default {
           this.$router.go(0);
         }
       });
+    },
+    onChangeTabsHandle(val) {
+      this.activeIndex = val;
     }
   }
 };

@@ -206,7 +206,7 @@ export default {
         .then(res => {
           if (res.pageDatas != []) {
             this.tableList = res.pageDatas.map(item => {
-              item.createTime = formatDate(item.createTime, "YYYY-MM-DD");
+              item.createTime = formatDate(item.createTime, "YYYY-MM-DD hh:mm:ss");
               return item;
             });
           }

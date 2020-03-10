@@ -53,6 +53,7 @@ export default {
     // 上下分页 pageIndex
     onCurrentChangeHandle(page) {
       this.$emit("onCurrentChange", page);
+      window.pageYOffset = document.body.scrollTop = document.documentElement.scrollTop = 0;
     },
     // 每页多少条切换 pageSize
     onSizeChangeHandle(page_size) {

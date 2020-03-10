@@ -145,25 +145,24 @@ export default {
   },
   methods: {
     creatQrCode() {
-      if (this.currentLanguage === 2) {
-        return;
+      if (this.currentLanguage === 1) {
+        //生成微信二维码
+        this.$nextTick(() => {
+          if (qrCode) {
+            qrCode.clear(); //清除当前二维码
+            qrCode.makeCode(this.shareWeiXinUrl);
+          } else {
+            qrCode = new QRCode(this.$refs["qrCodeUrl"], {
+              text: this.shareWeiXinUrl, // 要分享的网页路径
+              width: 220,
+              height: 220,
+              colorDark: "#000000",
+              colorLight: "#ffffff",
+              correctLevel: QRCode.CorrectLevel.H
+            });
+          }
+        });
       }
-      //生成微信二维码
-      this.$nextTick(() => {
-        if (qrCode) {
-          qrCode.clear(); //清除当前二维码
-          qrCode.makeCode(this.shareWeiXinUrl);
-        } else {
-          qrCode = new QRCode(this.$refs["qrCodeUrl"], {
-            text: this.shareWeiXinUrl, // 要分享的网页路径
-            width: 220,
-            height: 220,
-            colorDark: "#000000",
-            colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.H
-          });
-        }
-      });
     },
     onClickShareQQHandle() {
       shareConfig("qq", {

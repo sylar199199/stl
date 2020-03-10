@@ -242,8 +242,8 @@ export default {
     },
     webShareUrl() {
       return this.shareType === 2
-        ? `${webSharePage}?fromUid=${this.userUid}&objId=${this.articleId}&type=1&landId=${this.currentLanguage}` //web端分享活动地址
-        : window.location.href; //web端文章详情地址
+        ? `${webSharePage}?fromUid=${this.userUid}&objId=${this.articleId}&type=1&langId=${this.currentLanguage}` //web端分享活动地址
+        : `${window.location.href}?langId=${this.currentLanguage}`; //web端文章详情地址
     },
     shareWeiXinUrl() {
       return this.shareType === 2

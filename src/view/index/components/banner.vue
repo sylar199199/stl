@@ -1,6 +1,6 @@
 <template>
   <div class="home-banner-layer" ref="homeBannerLayer">
-    <el-carousel class="advert-banner" height="300px" v-if="banner.length != 0">
+    <el-carousel class="advert-banner" height="1080px" v-if="banner.length != 0">
       <el-carousel-item class="banner-item" v-for="item in banner" :key="item.id">
         <a v-if="item.targetType === 1" :href="item.targetLink" :target="'_blank'">
           <img :src="item.imageUrl" />
@@ -77,7 +77,6 @@ export default {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
-    line-height: 150px;
     margin: 0;
   }
 

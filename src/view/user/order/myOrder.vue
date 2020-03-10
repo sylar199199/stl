@@ -227,6 +227,7 @@ import productInfo from "@/view/user/order/components/productInfo";
 import {payStatus, currencyCode, currencyText} from "@/utils/env";
 import * as api from "@/api/order";
 import {formatDate} from "@/utils/mUtils";
+import {mapGetters} from "vuex";
 
 export default {
   name: "myOrder",
@@ -247,7 +248,7 @@ export default {
       dialogPaidVisible: false,
       dialogPayVisible: false,
       shareUrl: window.location.href,
-      shareWeiXinUrl: window.location.href,
+      shareWeiXinUrl: `${window.location.href}?langId=${this.currentLanguage}`,
       shareDialogVisible: false,
       pagination: {
         index: 1,
@@ -291,6 +292,7 @@ export default {
   },
 
   computed: {
+    ...mapGetters(["currentLanguage"]),
     currentOrderStatus() {
       return Number(this.$route.query.type) || 1;
     },

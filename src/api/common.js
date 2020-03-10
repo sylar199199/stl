@@ -80,10 +80,10 @@ export function addReadingCount(params) {
     data: params
   });
 }
-//获取web活动位W
+//获取web运营位列表
 export function getWebBannerList(params) {
   return request({
-    url: "/basic/listWebActivity",
+    url: "/basic/listWebRecommend",
     method: "get",
     params: params
   });

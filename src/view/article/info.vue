@@ -127,6 +127,7 @@ import {mapGetters, mapMutations} from "vuex";
 import {setLabelTitle, setShareMeta} from "@/utils/mUtils";
 import productChannelDialog from "@/components/productChannelDialog";
 import {webSharePage, H5bSharePage, H5bArticleInfoPage} from "@/utils/env";
+import * as commonAPI from "@/api/common";
 
 let favoriteList = getStore("articleFavoriteList") || [];
 export default {
@@ -163,7 +164,7 @@ export default {
     webShareUrl() {
       return this.shareType === 2
         ? `${webSharePage}?fromUid=${this.userUid}&objId=${this.articleId}&type=1&langId=${this.currentLanguage}` //web端分享活动地址
-        : window.location.href; //web端文章详情地址
+        : `${window.location.href}?langId=${this.currentLanguage}`; //web端文章详情地址
     },
     shareWeiXinUrl() {
       return this.shareType === 2
@@ -175,38 +176,43 @@ export default {
     formatNumToThousand
   },
   mounted() {
-    // 查询章节详情
-    let favoriteObj = {};
-    favoriteList.forEach(item => {
-      //取到所有标记收藏的id，判断是否被收藏
-      favoriteObj[item.id] = true;
-    });
-    api
-      .getArticleInfo({id: this.articleId})
-      .then(res => {
-        setLabelTitle(res.title); //设置标签页title
-        this.article = res;
-        this.chapterList = res.chapterList;
-        this.article.chapterList = res.chapterList.map(item => {
-          item.isFavorite = favoriteObj[item.id] ? true : false; //判断localStorage是否收藏id
-          return item;
-        });
-        setShareMeta(this.webShareUrl, this.article.title, this.article.summary, this.article.imageUrl); //设置分享meta
-        this.pageShow = true;
-      })
-      .catch(res => {
-        if (res.subCode === "320B202") {
-          this.$router.push({name: "offLevel"});
-        } else {
-          this.pageShow = true;
-          this.$dialog.alert(res.message, () => {
-            this.$router.push({name: "home"});
-          });
-        }
-      });
+    this.getArticleInfo();
   },
   methods: {
     ...mapMutations([types.SET_ARTICLE_CHAPTERLIST, types.SET_LOGIN_DIALOG_VISIBLE]),
+    // 查询章节详情
+    getArticleInfo() {
+      let favoriteObj = {};
+      favoriteList.forEach(item => {
+        //取到所有标记收藏的id，判断是否被收藏
+        favoriteObj[item.id] = true;
+      });
+      api
+        .getArticleInfo({id: this.articleId})
+        .then(res => {
+          setLabelTitle(res.title); //设置标签页title
+          this.article = res;
+          this.chapterList = res.chapterList;
+          this.article.chapterList = res.chapterList.map(item => {
+            item.isFavorite = favoriteObj[item.id] ? true : false; //判断localStorage是否收藏id
+            return item;
+          });
+          setShareMeta(this.webShareUrl, this.article.title, this.article.summary, this.article.imageUrl); //设置分享meta
+          this.pageShow = true;
+          this.addReadingCount();
+        })
+        .catch(res => {
+          if (res.subCode === "320B202") {
+            this.$router.push({name: "offLevel"});
+          } else {
+            this.pageShow = true;
+            this.$dialog.alert(res.message, () => {
+              this.$router.push({name: "home"});
+            });
+          }
+        });
+    },
+
     onClickFavoriteHandle(item) {
       if (item.isFavorite) {
         //取消收藏
@@ -248,6 +254,16 @@ export default {
         name: "chapterDetails",
         params: {chapterId: this.chapterList[0].id, articleId: this.article.id}
       });
+    },
+    addReadingCount() {
+      //添加播放记录
+      commonAPI
+        .addReadingCount({
+          courseType: 1,
+          id: this.articleId
+        })
+        .then(res => {})
+        .catch(res => {});
     }
   }
 };
